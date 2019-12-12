@@ -1,0 +1,138 @@
+/* the tree node's style */
+
+.tree-node {
+    display: inline-block;
+    overflow-y: hidden;
+    cursor: pointer;
+    text-align: justify;
+}
+
+/* style for the container */
+.tree-node-children {
+    margin-left: 15px;
+}
+
+.selectores{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+/* style for the leaf */
+.tree-node-leaf {
+    margin-left: 3%;
+    cursor: pointer;
+}
+
+.tree-node-children-collapsed {
+    height: 0px;
+}
+
+.tree-node-arrow {
+    cursor: pointer;
+    margin-right: 6px;
+    display: inline-block;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+/* rotate the triangle to close it */
+.tree-node-arrow-collapsed {
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
+
+.check-tree{
+    display: inline-flex;
+}
+
+.tree-checkbox {
+    display: inline-flex;
+    cursor: pointer;
+}
+
+.ButtonLeft {
+    width: 150px;
+    height: 40px;
+    background-color: #0b96df;
+    position: relative;
+    margin-left: 40px;
+    margin-bottom: 0px;
+    border-radius: 5px;
+}
+
+.ButtonLeft:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -17px;
+    border-style: solid;
+    border-width: 20px 20px 20px 0;
+    border-color: transparent #0b96df transparent transparent;
+}
+
+.ButtonLeft > a {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    color: #fff;
+    font: bold 18px/40px Sans-Serif;
+}
+
+.ButtonLeft:hover {
+    background-color: #00c69f;
+}
+
+.ButtonLeft:hover:before {
+    border-right-color: #00c69f;
+}
+
+.ButtonLeft:hover {
+background-color:#00c69f;
+}
+
+
+
+.ButtonRight {
+    width: 150px;
+    height: 40px;
+    background-color: #0b96df;
+    position: relative;
+    margin-right: 40px;
+    margin-bottom: 0px;
+    border-radius: 5px;
+}
+
+.ButtonRight:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -17px;
+    border-style: solid;
+    border-width: 20px 0px 20px 20px;
+    border-color:  transparent #0b96df transparent #0b96df;
+}
+
+.ButtonRight > a {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    color: #fff;
+    font: bold 18px/40px Sans-Serif;
+}
+
+.ButtonRight:hover {
+    background-color: #00c69f;
+}
+
+.ButtonRight:hover:before {
+    border-left-color: #00c69f;
+}
+
+.Buttons{
+  display: grid;
+  grid-template-columns: 85% 85%;
+  padding: 5% 0% 1% 0%;
+}
