@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="../Day/css/animate.css">
   <link href="../Day/css/animate.min.css" rel="stylesheet">
   <link href="../Day/css/style.css" rel="stylesheet" />
+  <link href="intro/introjs.css" rel="stylesheet">
  
   <!-- =======================================================
     Theme Name: Day
@@ -41,22 +42,23 @@
         <div class="navbar-collapse collapse">
           <div class="menu">
             <ul class="nav nav-tabs" role="tablist">
-              <li role="presentation"><a href="index.html" class="active">Home</a></li>
-              <li role="presentation"><a id="etiq" href="etiquetar.html">Etiquetar</a></li>
-              <li role="presentation"><a  href="actualizaciones.html">Actualizaciones</a></li>
-              <li role="presentation"><a href="about.html">Que Hacemos</a></li>
-              <li role="presentation"><a href="contact.html">Contact</a></li>
+              <li role="presentation"><a href="index.html" class="active" data-step="1" data-intro="Seccion mostrando inicio de la pagina" data-position="left">Home</a></li>
+              <li role="presentation"><a id="etiq" href="etiquetar.html" data-step="2" data-intro="Seccion mostrando los tweets a etiquetar de la pagina, se necesita previo a inicio de sesion" data-position="left">Etiquetar</a></li>
+              <li role="presentation"><a  href="actualizaciones.html" data-step="3" data-intro="Seccion mostrando los usuarios que realizarion tweets en un mapa" data-position="left">Actualizaciones</a></li>
+              <li role="presentation"><a href="about.html" data-step="4" data-intro="Seccion mostrando datos acerca del proyecto" data-position="left">Que Hacemos</a></li>
+              <li role="presentation"><a href="contact.html" data-step="5" data-intro="Seccion mostrando datos de los realizadores de la plataforma" data-position="left">Contactanos</a></li>
             </ul>
           </div>
         </div>
       </div>
       <!--/.container-->
     </nav>
+    <a class="btn btn-large btn-primary" href="javascript:introJs().setOption('showProgress',true).start();"> Guia de Funcionamiento</a>
     <!--/nav-->
   </header>
   <!--/header-->
-
-  <div class="slider">
+  <div id="root" data-step="6" data-intro="Seccion para iniciar sesion usando cuenta de Google o Twitter" data-position="left"></div>
+  <div class="slider" data-step="7" data-intro="Seccion de bienvenida al usuario" data-position="left">
     <div id="about-slider">
       <div id="carousel-slider" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
@@ -110,7 +112,7 @@
   <hr>
 
   
-  <section class="action">
+  <section class="action" data-step="8" data-intro="Seccion que muestra el porque de la plataforma" data-position="left">
     <div class="container">
       <div class="left-text">
         <h4>Que estamos haciendo?</h4>
@@ -122,11 +124,11 @@
      <!-- <div id="logo">
               <img src="img/Logo.png" alt="" />
       </div>-->
-     <div class="logoImg"></div>
+     <div class="logoImg" data-step="9" data-intro="Seccion mostrando el logo del grupo" data-position="left"></div>
     </div>
   </section>
 
-  <div class="team" style="padding: 5% 0% 5% 0%">
+  <div class="team" style="padding: 5% 0% 5% 0%" data-step="10" data-intro="Seccion que muestar informacion de los desarrolladores de la plataforma" data-position="left">
         <div class="text-center wow fadeInDown">
           <h2>Equipo de Desarrollo</h2>
           <p>La mayoria de los miembros del equipo son estudiantes de la Universidad ESPOL y junto con el dueño de este proyecto somo un total de 5 Mimebros que colaboramos para este proyecto.</p>
@@ -311,13 +313,13 @@
       </div>
     </div>
   </div>
-  <div id="root"></div>
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
  <script type="text/javascript" src="../Day/js/jquery.min.js"></script>
   <script src="../Day/js/jquery-migrate.min.js"></script> 
   <!-- Include all compiled plugins (below), or include individual files as needed -->
  <script src="../Day/js/bootstrap.min.js"></script>
   <script src="../Day/js/wow.min.js"></script>
+  <script type="text/javascript" src="intro/intro.js"></script>intro
   <script>
     wow = new WOW({}).init();
   </script>

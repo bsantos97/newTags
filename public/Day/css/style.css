@@ -10,7 +10,9 @@
 /* ==== overwrite bootstrap standard ==== */
 @import url('animate.css');
 
-
+div#root{
+  padding: 0% 0% 20% 0%;
+}
 
 body {
 	font-family:'Open Sans', Arial, sans-serif;
@@ -1165,4 +1167,16 @@ ul.social-network li a {
 }
 #root{
   padding: 10% 0% 10% 0%;
+}
+
+header nav{
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+@media only screen and (max-width: 600px) {
+   div#root{
+  padding: 0% 0% 20% 0%;
+}
 }

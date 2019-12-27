@@ -15,12 +15,22 @@
   <link href="../Day/css/animate.min.css" rel="stylesheet">
   <link href="../Day/css/style.css" rel="stylesheet" />
       <script src="../src/App.js"></script>
+
   <!-- =======================================================
     Theme Name: Day
     Theme URL: https://bootstrapmade.com/day-multipurpose-html-template-for-free/
     Author: BootstrapMade
     Author URL: https://bootstrapmade.com
   ======================================================= -->
+  <link href="../ComponentMap/style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
+   <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+   integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+   crossorigin=""></script>
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.3/jquery.csv.min.js"></script>
+  <script type="text/javascript" lang="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.15.1/xlsx.full.min.js"></script>
 </head>
 
 <body>
@@ -45,7 +55,7 @@
               <li role="presentation"><a href="../etiquetar.html">Etiquetar</a></li>
               <li role="presentation"><a href="actualizaciones.html" class="active">Actualizaciones</a></li>
               <li role="presentation"><a href="../about.html">Que Hacemos</a></li>
-              <li role="presentation"><a href="../contact.html">Contact</a></li>
+              <li role="presentation"><a href="../contact.html">Contactanos</a></li>
             </ul>
           </div>
         </div>
@@ -59,51 +69,9 @@
   <div class="services">
     <div class="container">
       <div class="text-center">
-        <h2>Actualizaciones del Desarrollo del Proyecto</h2>
-        <div class="col-md-3 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
-          <i class="fa fa-heart-o"></i>
-          <h3>Fully Responsive</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum nam numquam voluptates cumque inventore, quibusdam corporis consequatur amet.</p>
-        </div>
-        <div class="col-md-3 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-          <i class="fa fa-cloud"></i>
-          <h3>Retina Ready</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum nam numquam voluptates cumque inventore, quibusdam corporis consequatur amet.</p>
-        </div>
-        <div class="col-md-3 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="900ms">
-          <i class="fa fa-book"></i>
-          <h3>Fresh and Clean</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum nam numquam voluptates cumque inventore, quibusdam corporis consequatur amet.</p>
-        </div>
-        <div class="col-md-3 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="1200ms">
-          <i class="fa fa-gear"></i>
-          <h3>Easy to Customize</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum nam numquam voluptates cumque inventore, quibusdam corporis consequatur amet.</p>
-        </div>
-      </div>
-    </div>
-    <div class="text-center">
-      <div class="container">
-        <div class="col-md-3 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
-          <i class="fa fa-heart-o"></i>
-          <h3>Fully Responsive</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum nam numquam voluptates cumque inventore, quibusdam corporis consequatur amet.</p>
-        </div>
-        <div class="col-md-3 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-          <i class="fa fa-cloud"></i>
-          <h3>Retina Ready</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum nam numquam voluptates cumque inventore, quibusdam corporis consequatur amet.</p>
-        </div>
-        <div class="col-md-3 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="900ms">
-          <i class="fa fa-book"></i>
-          <h3>Fresh and Clean</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum nam numquam voluptates cumque inventore, quibusdam corporis consequatur amet.</p>
-        </div>
-        <div class="col-md-3 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="1200ms">
-          <i class="fa fa-gear"></i>
-          <h3>Easy to Customize</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum nam numquam voluptates cumque inventore, quibusdam corporis consequatur amet.</p>
-        </div>
+        <h2>Actualizaciones en el etiquetado de tweets</h2>
+        <div id="map"></div>
+        <script src="../ComponentMap/script.js"></script>
       </div>
     </div>
   </div>
