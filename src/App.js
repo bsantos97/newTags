@@ -2,9 +2,15 @@ import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import Login from './components/Login';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+//import About from'./PagesComponents/About.js';
+//import Actualization from './PagesComponents/Actualization.js';
+//import Contact from './PagesComponents/Contact.js';
+//import Header from './PagesComponents/Header.js';
+//import Home from './PagesComponents/Heome.js';
 
-
-function App() {
+class App extends React.Component{
+  render(){
   return (
     <div className="App">
       <header className="App-header">
@@ -13,13 +19,28 @@ function App() {
         <div className="jumbotron">
           
           
-          <Login/>
+        <Login/>
           
         </div>
       </header>
+
+
       
-    </div>
+    //</div>
+    //<Router>
+      //<div>
+        //<Header/>
+        //<Switch>
+        //<Route exact path="/" component={Home} />
+        //<Route path="/about" component={About} />
+        //<Route path="/contact" component={Contact} />
+        //<Route path="/actualization" component={Actualization} />
+        //</Switch>
+      //</div>
+    //</Router>
+
   );
+  }
 }
 
 export default App;

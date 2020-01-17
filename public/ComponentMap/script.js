@@ -7,7 +7,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png?{foo}', {
 
 
 // read Excel file and convert to json format using fetch
-fetch('./tweets.xlsx')
+fetch('./ComponentMap/tweets.xlsx')
   .then(function (res) {
     /* get the data as a Blob */
     if (!res.ok) throw new Error("fetch failed");
@@ -32,7 +32,7 @@ fetch('./tweets.xlsx')
     /************************ El JSON ************************/
     //console.log(_JsonData);
     let twtIcon = L.icon({
-    iconUrl: 'twt.png',
+    iconUrl: './ComponentMap/twt.png',
     shadowUrl: '',
 
     iconSize:     [19, 42], // size of the icon
