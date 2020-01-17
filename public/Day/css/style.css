@@ -10,9 +10,7 @@
 /* ==== overwrite bootstrap standard ==== */
 @import url('animate.css');
 
-div#root{
-  padding: 0% 0% 20% 0%;
-}
+
 
 body {
 	font-family:'Open Sans', Arial, sans-serif;
@@ -1169,14 +1167,61 @@ ul.social-network li a {
   padding: 10% 0% 10% 0%;
 }
 
-header nav{
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
+#loginBt{
+  color: black;
 }
 
-@media only screen and (max-width: 600px) {
-   div#root{
-  padding: 0% 0% 20% 0%;
+#outBt{
+  color: black;
+  display: none;
 }
+
+#logoGoogle{
+  width: 20px;
+  margin-top:7px; 
+  margin-right:8px;
+}
+
+#logGoogLetras{
+  text-transform:none;
+}
+
+#logoTwitter{
+  width: auto;
+  height: auto;
+}
+
+#tablaProyectos{
+  display: none;
+  color: black;
+}
+
+#iniciarSesion{
+  padding: 5% 0% 5% 0%;
+}
+
+#userInfo{
+  display: none;
+}
+
+#ultimo{
+  position: fixed;
+  bottom: 0;
+  width:100%;
+}
+
+@media (max-width: 767px) {
+  #ultimo{
+  padding:30px;
+  }
+}
+
+#ecuador{
+  color: blue;
+}
+#japan{
+  color: blue;
+}
+#brazil{
+  color: blue;
 }

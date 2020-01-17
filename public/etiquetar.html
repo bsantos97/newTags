@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -7,7 +7,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
   <title>DAW Proyect - NewTags</title>
-   <script src="jquery-3.4.1.min.js"></script>
+  <script src="jquery-3.4.1.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-auth.js"></script>
+  <script type="module" src="../Day/js/login2.js"></script>  
+
+  <!-- Google -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+
 
   <!-- Bootstrap -->
   <link href="../Day/css/bootstrap.min.css" rel="stylesheet">
@@ -15,7 +23,6 @@
   <link rel="stylesheet" href="../Day/css/animate.css">
   <link href="../Day/css/animate.min.css" rel="stylesheet">
   <link href="../Day/css/style.css" rel="stylesheet" />
-
   <!-- =======================================================
     Theme Name: Day
     Theme URL: https://bootstrapmade.com/day-multipurpose-html-template-for-free/
@@ -46,7 +53,7 @@
               <li role="presentation"><a href="etiquetar.html"  class="active">Etiquetar</a></li>
               <li role="presentation"><a href="../actualizaciones.html">Actualizaciones</a></li>
               <li role="presentation"><a href="../about.html">Que hacemos</a></li>
-              <li role="presentation"><a href="../contact.html">Contactanos</a></li>
+              <li role="presentation"><a href="../contact.html">Contact</a></li>
             </ul>
           </div>
         </div>
@@ -56,29 +63,86 @@
     <!--/nav-->
   </header>
   <!--/header-->
-
-   <section class="action">
-    <div class="container">
+   <section class="action" >
+    <div class="container" id="iniciarSesion">
       <div class="text-center">
-        <div class="col-md-12 text-center">
-          <h4>Que estamos haciendo?</h4>
-          <p>Esta Web Permitirá etiquetar tweets referentes a desastres naturales, por el momento el dataset es sobre el terremoto ocurrido en Ecuador el 16 de Abril del 2016. Esto permitirá mejorar la organización de los gobiernos y brindar ayuda donde se la necesite. Quieres saber más?</p>
-          <div class="col-md-7">
-            <div class="btn-gamp"><a href="../index.html">Login</a></div>
+        <div id="textoAyudaLogin">
+          <h4>Quieres ayudarnos a clasificar los Tweets?</h4>
+          <p>Para poder ayudarnos primero tienes que iniciar sesión, puede ser a través de tu cuenta de Google o de Twitter. Pulsa el boton de abajo para iniciar sesión</p>
+        </div>
+        
+        <div id="contenedorBot" class="col-md-12">
+          <!-- <div class="btn-gamp"><a href="../index.html">Login</a></div>-->
+          
+          <div class="col-md-6 center-align">
+            <a id="logGoogLetras" class="oauth-container btn darken-4 white black-text"  >
+              <div class="left">
+                <img id="logoGoogle" alt="Google sign-in" 
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
+              </div>
+              Login with Google
+             </a>
           </div>
-        </div> 
-      </div>    
-    </div>
-  </section>
-  <section class="seccion">
-    <div class="container">
-      <div class="text-center">
-        <div
+
+          <div class="col s12 m6 offset-m3 center-align">
+            <a id="logTwittLetras" class="oauth-container btn darken-4 white black-text"  >
+              <div class="center-align">
+                <img id="logoTwitter" 
+                  src="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/icons/sign-in-with-twitter-gray-1-png-img-fullhd-medium.png.img.fullhd.medium.png"  />
+              </div>
+             </a>
+          </div>
+
+        </div>
       </div>
     </div>
   </section>
 
-  <div class="sub-footer">
+
+  <section id="tablaProyectos" class="action">
+    <div class="center-align">
+      <h1>
+        Lista de Proyecto Disponibles a Etiquetar
+      </h1>
+    </div>
+
+    <table class="table table-bordered" id="tableP">
+      <thead>
+        <tr class="table-primary">
+          <th scope="col">Eventos</th>
+          <th scope="col">Descripcion</th>
+          <th scope="col">Ir</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Ecuador Earthquake 2016</td>
+          <td>This occurred on April 16 at 18:58 pm with a magnitude of 7.8 in Ritcher Scale, the towns of Muisne and Pedernales were the most affected.</td>
+          <td><a id="ecuador" href="">Ecuador Earthquake</a></td>
+        </tr>
+        <tr>
+          <td>Japan Earthquake 2011</td>
+          <td>This occurred on 7 April, was a magnitude 9.0 off the coast of Japan that produce a powerful tsunami.</td>
+          <td><a id="japan" href="">Japan Earthquake</a></td>
+        </tr>
+        <tr>
+           <td>Wildfire Amazon Brazil 2019</td>
+          <td>These wildfires occurred all the years, but this time was more bigger than the other years, this year are 71.497 wildfires.</td>
+          <td><a id="brazil" href="">Wildfire Amazon Brazil</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+  </section>
+
+  <div class="center-align">
+    <button id="userInfo" >Información del Usuario</a></button>
+  </div>
+  <div class="center-align">
+    <button id="outBt" >Sign Out</button>
+  </div>
+
+  <div id="ultimo" class="sub-footer">
     <div class="container">
       <div class="social-icon">
         <div class="col-md-4">
@@ -110,22 +174,19 @@
   </div>
 
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-   < <script type="text/javascript" src="../Day/js/jquery.min.js"></script>
+   <script type="text/javascript" src="../Day/js/jquery.min.js"></script>
   <script src="../Day/js/jquery-migrate.min.js"></script> 
   <!-- Include all compiled plugins (below), or include individual files as needed -->
- < <script src="../Day/js/bootstrap.min.js"></script>
+  <script src="../Day/js/bootstrap.min.js"></script>
   <script src="../Day/js/wow.min.js"></script>
-   <script src="../src/index.js"></script> 
-   <script src="../src/App.js"></script> 
-  <!--Login-->
- <!-- <script src="js/App.js"></script>
-  <script src="js/index.js"></script>
-  <script src="js/Login.js"></script>
-  <script src="js/serviceWorker.js"></script>-->
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+
+
   <script>
     wow = new WOW({}).init();
   </script>
 
-</body>
 
+</body>
 </html>
